@@ -1,0 +1,14 @@
+name: Deploy Dist folder
+on: push
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Clone the repo
+            uses: actions/checkout@v5
+            # run: |
+            #   echo "Cloning repo ${{ github.repository }}"
+            #   echo "${{toJson(github)}}"
+            #   git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git myfiles
+            #   cd myfiles
+            #   ls -la
