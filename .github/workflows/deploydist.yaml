@@ -23,7 +23,7 @@ jobs:
             id: cache
             with:
               path: path/to/dependencies
-              key: ${{ runner.os }}-node-${{ hashFiles('**/lockfiles') }}
+              key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           - name: Install Dependencies
             if: steps.cache.outputs.cache-hit != 'true'
             run: npm -y install
@@ -46,7 +46,7 @@ jobs:
             id: cache
             with:
               path: path/to/dependencies
-              key: ${{ runner.os }}-node-${{ hashFiles('**/lockfiles') }}
+              key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           - name: Install Dependencies
             if: steps.cache.outputs.cache-hit != 'true'
             run: npm -y install
