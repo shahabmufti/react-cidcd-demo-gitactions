@@ -1,5 +1,5 @@
 name: Deploy Dist folder
-on: push
+on: [push, workflow_dispatch]
 jobs:
     test:
         runs-on: ubuntu-latest
@@ -18,7 +18,16 @@ jobs:
               node-version: 22
           - name: Print Node version
             run: node -v
+          - name: Cache dependencies
+            uses: actions/cache@v4
+            with:
+              path: path/to/dependencies
+              key: ${{ runner.os }}-node-${{ hashFiles('**/lockfiles') }}
+            id: cache
+          - name: Cache id
+            run: ${{ cache }}
           - name: Install Dependencies
+            if: steps.cache.outputs.cache-hit != 'true'
             run: npm -y install
           - name: Run Tests
             run: npm run test
@@ -34,7 +43,16 @@ jobs:
               node-version: 22
           - name: Print Node version
             run: node -v
+          - name: Cache dependencies
+            uses: actions/cache@v4
+            with:
+              path: path/to/dependencies
+              key: ${{ runner.os }}-node-${{ hashFiles('**/lockfiles') }}
+            id: cache
+          - name: Cache id
+            run: ${{ cache }}
           - name: Install Dependencies
+            if: steps.cache.outputs.cache-hit != 'true'
             run: npm -y install
           - name: Build Application
             run: npm run build
