@@ -1,5 +1,5 @@
 import './App.css'
-// this is app component
+// this is app component; comment just added
 function App() {
 
   return (
