@@ -43,4 +43,4 @@ jobs:
         runs-on: ubuntu-latest
         steps:
           - name: Deploy Dist
-            run: echo "Deployment completed""
+            run: echo "Deployment completed"
