@@ -1,4 +1,4 @@
-name: SEtup node and install dependencies
+name: Setup node and install dependencies
 description: "set up Node.js, caches dependencies, and installs them"
 runs:
   using: composite
