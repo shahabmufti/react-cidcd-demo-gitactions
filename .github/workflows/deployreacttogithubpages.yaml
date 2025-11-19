@@ -33,7 +33,8 @@ jobs:
           - name: Upload dist artifact
             uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
             with:
-              path: build_outputs_folder/
+              name: github-pages
+              path: dist
     deploy:
         runs-on: ubuntu-latest
         needs: build
