@@ -23,6 +23,8 @@ jobs:
             #   ls -la
           - name: Setup node and install dependencies
             uses: ./.github/actions/setupnode
+            with: 
+              node-version: 20
           - name: Run Tests
             run: npm run test
     build:
