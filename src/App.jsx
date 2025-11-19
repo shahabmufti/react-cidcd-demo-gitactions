@@ -7,6 +7,7 @@ function App() {
       <h1>CI/CD using Github Actions</h1>
       <h2>For beginners v2</h2>
       <h2>With 2 projects</h2>
+      <h2>With 2 projects and some tests</h2>
     </>
   )
 }
